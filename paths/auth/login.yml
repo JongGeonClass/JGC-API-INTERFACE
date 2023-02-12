@@ -1,0 +1,42 @@
+login:
+  post:
+    summary: 로그인
+    description: 로그인을 한 뒤 프론트 쿠키에 토큰을 저장합니다.
+    requestBody:
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              username:
+                type: string
+                description: 아이디
+              password:
+                type: string
+                description: 비밀번호
+    responses:
+      200:
+        description: OK
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                code:
+                  type: integer
+                  description: 로그인 성공 여부 (현재는 항상 성공하므로 8000이 고정입니다.)
+                token:
+                  type: string
+                  description: 인증 토큰
+      401:
+        description: Unauthorized
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                code:
+                  type: integer
+                  description: 로그인 성공 여부 (현재는 항상 실패이므로 8001이 고정입니다.)
+      500:
+        description: Internal Server Error

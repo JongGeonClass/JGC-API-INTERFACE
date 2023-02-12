@@ -1,0 +1,25 @@
+openapi: '3.0.2'
+info:
+  title: JongGeon Class API Interface Documents
+  version: 0.1.0
+  description: |
+    JongGeon Class API Interface Documentation
+
+servers:
+- url: http://localhost:8806/
+  description: local
+  variables:
+    basePath:
+      default: /api
+- url: https://jonggeon-class.kro.kr/
+  description: Production
+  variables:
+    basePath:
+      default: /api
+      
+paths:
+  /api/auth/login:
+    $ref: paths/auth/login.yml#/login
+  
+  /api/auth/signup:
+    $ref: paths/auth/signup.yml#/signup
