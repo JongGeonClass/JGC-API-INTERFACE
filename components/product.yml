@@ -1,0 +1,46 @@
+product:
+  type: object
+  description: 상품 정보
+  properties:
+    id:
+      type: integer
+      description: 상품 ID
+      default: 1
+    brand_id:
+      type: integer
+      description: 브랜드 ID
+      default: 1
+    brand_name:
+      type: string
+      description: 브랜드 이름
+      default: 종건급
+    name:
+      type: string
+      description: 상품 이름
+      default: 종건급 자동차 바퀴
+    price:
+      type: integer
+      description: 상품 가격
+      default: 9223372036854775807
+    amount:
+      type: integer
+      description: 상품 재고
+      default: 9223372036854775807
+    title_image_s3:
+      type: string
+      description: 상품 대표 이미지 S3 URL
+      default: https://s3.ap-northeast-2.amazonaws.com/jgc-product-image/1/1/1.jpg
+    description_s3:
+      type: string
+      description: 상품 설명 이미지 S3 URL
+      default: https://s3.ap-northeast-2.amazonaws.com/jgc-product-description/1/1/1.jpg
+    created_time:
+      type: string
+      description: 상품 등록 시간
+      default: 2023-02-12T23:11:50Z
+
+products:
+  type: array
+  description: 상품 정보 배열
+  items:
+    $ref: '#/product'
