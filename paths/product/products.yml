@@ -22,7 +22,7 @@ products:
                       * 8000 상품 조회 성공
                 products:
                   $ref: '../../components/product.yml#/products'
-                max_page_size:
+                max_pagesize:
                   type: integer
                   description: 최대 페이지 수
                   default: 1
