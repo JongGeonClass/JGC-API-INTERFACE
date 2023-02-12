@@ -9,11 +9,9 @@ login:
             type: object
             properties:
               username:
-                type: string
-                description: 아이디
+                $ref: '../../components/auth.yml#/username'
               password:
-                type: string
-                description: 비밀번호
+                $ref: '../../components/auth.yml#/password'
     responses:
       200:
         description: OK
@@ -24,10 +22,14 @@ login:
               properties:
                 code:
                   type: integer
-                  description: 로그인 성공 여부 (현재는 항상 성공하므로 8000이 고정입니다.)
+                  enum: [8000]
+                  description: >
+                    dictionary:
+                      * 8000 로그인 성공
                 token:
                   type: string
                   description: 인증 토큰
+                  default: '{token}'
       401:
         description: Unauthorized
         content:
@@ -37,6 +39,9 @@ login:
               properties:
                 code:
                   type: integer
-                  description: 로그인 성공 여부 (현재는 항상 실패이므로 8001이 고정입니다.)
+                  enum: [8001]
+                  description: >
+                    dictionary:
+                      * 8001 로그인 실패 아이디 혹은 비밀번호 불일치
       500:
         description: Internal Server Error

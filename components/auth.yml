@@ -1,0 +1,26 @@
+username:
+  type: string
+  description: 아이디 (로그인에 사용되는 아이디)
+  default: morganid
+  required: true
+password:
+  type: string
+  description: 비밀번호
+  default: password
+  required: true
+nickname:
+  type: string
+  description: 닉네임 (보여지는 이름)
+  default: morgan
+  required: true
+email:
+  type: string
+  description: 이메일
+  default: thak1411@gmail.com
+  required: true
+
+token:
+  type: string
+  description: 인증 토큰
+  default: '{token}'
+  required: true

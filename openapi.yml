@@ -16,10 +16,23 @@ servers:
   variables:
     basePath:
       default: /api
-      
+
+components:
+  securitySchemes:
+    cookieAuth:
+      type: apiKey
+      in: cookie
+      name: JGC_SESSION
+
+security:
+- cookieAuth: []
+
 paths:
   /api/auth/login:
     $ref: paths/auth/login.yml#/login
   
   /api/auth/signup:
     $ref: paths/auth/signup.yml#/signup
+
+  /api/auth/logout:
+    $ref: paths/auth/logout.yml#/logout
