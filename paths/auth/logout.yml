@@ -5,14 +5,7 @@ logout:
       현재는 로그아웃 시 브라우저에 등록되어있는 쿠키를 삭제합니다.
       다만 토큰이 소멸되지는 않습니다.
     parameters:
-      - in: cookie
-        name: JGC_SESSION
-        schema:
-          type: string
-          description: >
-            로그인 시 프론트 쿠키에 저장된 토큰입니다.
-            로그아웃 시 프론트 쿠키에 저장된 토큰을 삭제합니다.
-        required: true
+    - $ref: '../../components/auth.yml#/token'
     responses:
       200:
         description: OK
