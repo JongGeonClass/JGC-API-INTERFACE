@@ -1,4 +1,6 @@
 product_id:
+  in: query
+  name: product_id
   type: integer
   description: 상품 아이디 (DB KEY)
   default: 1
@@ -27,3 +29,47 @@ parent_review_id:
   default: 1
   minimum: 1
   required: false
+
+
+review:
+  type: object
+  description: 리뷰
+  properties:
+    id:
+      type: integer
+      description: 리뷰 ID
+      default: 1
+    product_id:
+      type: integer
+      description: 상품 ID
+      default: 1
+    user_id:
+      type: integer
+      description: 리뷰 작성자 ID
+      default: 1
+    nickname:
+      type: string
+      description: 리뷰 작성자 닉네임
+      default: 종건급
+    score:
+      type: integer
+      description: 평점
+      default: 5
+    content:
+      type: string
+      description: 리뷰 내용
+      default: 종건급 상품이라 그런지 완전 대박이에요! 우주 1등급 제품이네요!
+    is_parent:
+      type: boolean
+      description: 부모 리뷰인지 여부
+      default: true
+    created_time:
+      type: string
+      description: 상품 등록 시간
+      default: 2023-02-12T23:11:50Z
+
+reviews:
+  type: array
+  description: 리뷰 배열
+  items:
+    $ref: '#/review'

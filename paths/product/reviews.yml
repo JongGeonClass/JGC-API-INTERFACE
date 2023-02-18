@@ -1,0 +1,25 @@
+reviews:
+  get:
+    summary: 리뷰 조회
+    description: >
+      현재 등록된 상품의 리뷰를 조회합니다.
+    parameters:
+    - $ref: '../../components/review.yml#/product_id'
+    responses:
+      200:
+        description: OK
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                code:
+                  type: integer
+                  enum: [8000]
+                  description: >
+                    dictionary:
+                      * 8000 리뷰 조회 성공
+                reviews:
+                  $ref: '../../components/review.yml#/reviews'
+      500:
+        description: Internal Server Error

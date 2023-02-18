@@ -51,3 +51,6 @@ paths:
   
   /api/product/add-review:
     $ref: paths/product/add-review.yml#/add-review
+  
+  /api/product/reviews:
+    $ref: paths/product/reviews.yml#/reviews
