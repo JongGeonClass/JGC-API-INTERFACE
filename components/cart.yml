@@ -1,0 +1,13 @@
+product_id:
+  type: integer
+  description: 상품 아이디 (DB KEY)
+  default: 1
+  minimum: 1
+  required: true
+
+amount:
+  type: integer
+  description: 상품 개수
+  default: 1
+  minimum: 1
+  required: true

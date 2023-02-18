@@ -1,0 +1,37 @@
+add-to-cart:
+  post:
+    summary: 장바구니에 상품 추가
+    description: >
+      장바구니에 상품을 추가합니다.
+      이미 존재하는 상품을 추가했다면, 기존에 등록되어 있는 상품 개수에 +@ 합니다.
+      존재하지 않는 상품 번호를 파라미터로 전달했다면, 200을 뱉고 무시합니다.
+    parameters:
+    - $ref: '../../components/auth.yml#/token'
+    requestBody:
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              product_id:
+                $ref: '../../components/cart.yml#/product_id'
+              amount:
+                $ref: '../../components/cart.yml#/amount'
+    responses:
+      200:
+        description: OK
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                code:
+                  type: integer
+                  enum: [8000]
+                  description: >
+                    dictionary:
+                      * 8000 상품 추가 성공
+      401:
+        $ref: '../../components/response.yml#/responses/401'
+      500:
+        $ref: '../../components/response.yml#/responses/500'

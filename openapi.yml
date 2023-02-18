@@ -39,3 +39,6 @@ paths:
 
   /api/product/products:
     $ref: paths/product/products.yml#/products
+  
+  /api/product/add-to-cart:
+    $ref: paths/product/add-to-cart.yml#/add-to-cart

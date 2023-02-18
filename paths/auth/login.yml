@@ -44,4 +44,4 @@ login:
                     dictionary:
                       * 8001 로그인 실패 아이디 혹은 비밀번호 불일치
       500:
-        description: Internal Server Error
+        $ref: '../../components/response.yml#/responses/500'
