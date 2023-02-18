@@ -42,3 +42,6 @@ paths:
   
   /api/product/add-to-cart:
     $ref: paths/product/add-to-cart.yml#/add-to-cart
+  
+  /api/product/update-cart-amount:
+    $ref: paths/product/update-cart-amount.yml#/update-cart-amount
