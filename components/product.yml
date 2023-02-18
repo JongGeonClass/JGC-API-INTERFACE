@@ -1,3 +1,12 @@
+product_id:
+  in: query
+  name: product_id
+  type: integer
+  description: 상품 아이디 (DB KEY)
+  default: 1
+  minimum: 1
+  required: true
+
 product:
   type: object
   description: 상품 정보

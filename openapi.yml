@@ -37,6 +37,9 @@ paths:
   /api/auth/logout:
     $ref: paths/auth/logout.yml#/logout
 
+  /api/product/product:
+    $ref: paths/product/product.yml#/product
+
   /api/product/products:
     $ref: paths/product/products.yml#/products
   

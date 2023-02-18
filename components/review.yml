@@ -26,8 +26,8 @@ content:
 parent_review_id:
   type: integer
   description: 대댓글을 작성하려면, parent_review_id를 전달하면 됩니다. 대댓글을 작성하지 않으면 0을 전달하거나 전달하지 않으면 됩니다.
-  default: 1
-  minimum: 1
+  default: 0
+  minimum: 0
   required: false
 
 

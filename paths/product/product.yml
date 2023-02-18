@@ -1,0 +1,25 @@
+product:
+  get:
+    summary: 상품 조회
+    description: >
+      상품을 조회합니다.
+    parameters:
+    - $ref: '../../components/product.yml#/product_id'
+    responses:
+      200:
+        description: OK
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                code:
+                  type: integer
+                  enum: [8000]
+                  description: >
+                    dictionary:
+                      * 8000 상품 조회 성공
+                product:
+                  $ref: '../../components/product.yml#/product'
+      500:
+        description: Internal Server Error
