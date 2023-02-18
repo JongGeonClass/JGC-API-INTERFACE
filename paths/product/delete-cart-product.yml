@@ -1,0 +1,34 @@
+delete-cart-product:
+  post:
+    summary: 장바구니에 추가된 상품 삭제
+    description: >
+      장바구니에 추가된 상품을 삭제합니다.
+      존재하지 않는 상품을 삭제했다면, 200을 뱉고 무시합니다.
+    parameters:
+    - $ref: '../../components/auth.yml#/token'
+    requestBody:
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              product_id:
+                $ref: '../../components/cart.yml#/product_id'
+    responses:
+      200:
+        description: OK
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                code:
+                  type: integer
+                  enum: [8000]
+                  description: >
+                    dictionary:
+                      * 8000 상품 삭제 성공
+      401:
+        $ref: '../../components/response.yml#/responses/401'
+      500:
+        $ref: '../../components/response.yml#/responses/500'
