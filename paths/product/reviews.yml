@@ -22,4 +22,4 @@ reviews:
                 reviews:
                   $ref: '../../components/review.yml#/reviews'
       500:
-        description: Internal Server Error
+        $ref: '../../components/response.yml#/responses/500'

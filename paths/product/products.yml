@@ -27,4 +27,4 @@ products:
                   description: 최대 페이지 수
                   default: 1
       500:
-        description: Internal Server Error
+        $ref: '../../components/response.yml#/responses/500'
