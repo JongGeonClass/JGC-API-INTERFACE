@@ -1,0 +1,46 @@
+add-review:
+  post:
+    summary: 상품에 리뷰 작성
+    description: >
+      상품에 리뷰를 작성합니다.
+      대댓글을 작성하려면, parent_review_id를 전달하면 됩니다.
+    parameters:
+    - $ref: '../../components/auth.yml#/token'
+    requestBody:
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              product_id:
+                $ref: '../../components/review.yml#/product_id'
+              score:
+                $ref: '../../components/review.yml#/score'
+              content:
+                $ref: '../../components/review.yml#/content'
+              parent_review_id:
+                $ref: '../../components/review.yml#/parent_review_id'
+    responses:
+      200:
+        description: OK
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                code:
+                  type: integer
+                  enum: [8000, 8001, 8002]
+                  description: >
+                    dictionary:
+                      * 8000 리뷰 작성 성공
+                      * 8001 상품이 존재하지 않아 리뷰 작성 실패
+                      * 8002 부모 리뷰가 존재하지 않아 리뷰 작성 실패
+                review_id:
+                  type: integer
+                  description: 작성된 리뷰의 id
+                  default: 1
+      401:
+        $ref: '../../components/response.yml#/responses/401'
+      500:
+        $ref: '../../components/response.yml#/responses/500'

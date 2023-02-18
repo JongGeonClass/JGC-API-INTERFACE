@@ -48,3 +48,6 @@ paths:
   
   /api/product/delete-cart-product:
     $ref: paths/product/delete-cart-product.yml#/delete-cart-product
+  
+  /api/product/add-review:
+    $ref: paths/product/add-review.yml#/add-review

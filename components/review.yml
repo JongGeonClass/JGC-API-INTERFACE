@@ -1,0 +1,29 @@
+product_id:
+  type: integer
+  description: 상품 아이디 (DB KEY)
+  default: 1
+  minimum: 1
+  required: true
+
+score:
+  type: integer
+  description: 평점
+  default: 5
+  minimum: 1
+  maximum: 5
+  required: true
+
+content:
+  type: string
+  description: 리뷰 내용
+  default: 종건급 상품이라 그런지 완전 대박이에요! 우주 1등급 제품이네요!
+  minLength: 5
+  maxLength: 1000
+  required: true
+
+parent_review_id:
+  type: integer
+  description: 대댓글을 작성하려면, parent_review_id를 전달하면 됩니다. 대댓글을 작성하지 않으면 0을 전달하거나 전달하지 않으면 됩니다.
+  default: 1
+  minimum: 1
+  required: false
