@@ -1,5 +1,5 @@
 delete-cart-product:
-  post:
+  delete:
     summary: 장바구니에 추가된 상품 삭제
     description: >
       장바구니에 추가된 상품을 삭제합니다.
