@@ -7,6 +7,18 @@ product_id:
   minimum: 1
   required: true
 
+category_id:
+  in: query
+  name: category_id
+  type: integer
+  description: >
+    카테고리 아이디 (DB KEY)
+    카테고리 아이디를 전달하면, 해당 카테고리에 속한 상품들을 가져옵니다.
+    전달하지 않거나 0을 전달하면 모든 상품을 가져옵니다.
+  default: 0
+  minimum: 0
+  required: false
+
 product:
   type: object
   description: 상품 정보
@@ -24,12 +36,7 @@ product:
       description: 브랜드 이름
       default: 종건급
     categories:
-      type: array
-      description: 상품 카테고리
-      items:
-        type: string
-        description: 카테고리 이름
-        default: 종건급 카테고리
+      $ref: './category.yml#/categories'
     name:
       type: string
       description: 상품 이름

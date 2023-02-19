@@ -1,0 +1,22 @@
+category:
+  type: object
+  description: 카테고리 정보
+  properties:
+    id:
+      type: integer
+      description: 카테고리 ID
+      default: 1
+    brand_name:
+      type: string
+      description: 카테고리 이름
+      default: 종건급
+    description:
+      type: string
+      description: 카테고리 설명
+      default: 개지리는 종건급 카테고리
+
+categories:
+  type: array
+  description: 카테고리 배열
+  items:
+    $ref: '#/category'

@@ -30,12 +30,7 @@ cart:
       description: 브랜드 이름
       default: 종건급
     categories:
-      type: array
-      description: 상품 카테고리
-      items:
-        type: string
-        description: 카테고리 이름
-        default: 종건급 카테고리
+      $ref: './category.yml#/categories'
     product_name:
       type: string
       description: 상품 이름

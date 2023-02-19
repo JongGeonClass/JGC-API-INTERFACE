@@ -60,3 +60,6 @@ paths:
   
   /api/product/reviews:
     $ref: paths/product/reviews.yml#/reviews
+  
+  /api/product/categories:
+    $ref: paths/product/categories.yml#/categories

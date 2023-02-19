@@ -6,6 +6,7 @@ products:
     parameters:
     - $ref: '../../components/page.yml#/page'
     - $ref: '../../components/page.yml#/pagesize'
+    - $ref: '../../components/product.yml#/category_id'
     responses:
       200:
         description: OK
