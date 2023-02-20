@@ -6,7 +6,7 @@ category:
       type: integer
       description: 카테고리 ID
       default: 1
-    brand_name:
+    name:
       type: string
       description: 카테고리 이름
       default: 종건급
