@@ -1,0 +1,27 @@
+brands:
+  get:
+    summary: 유저가 운영 중인 브랜드 목록 조회
+    description: >
+      유저가 운영 중인 브랜드의 목록을 조회합니다.
+    parameters:
+    - $ref: '../../components/auth.yml#/token'
+    responses:
+      200:
+        description: OK
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                code:
+                  type: integer
+                  enum: [8000]
+                  description: >
+                    dictionary:
+                      * 8000 브랜드 목록 조회 성공
+                brands:
+                  $ref: '../../components/brand.yml#/brands'
+      401:
+        $ref: '../../components/response.yml#/responses/401'
+      500:
+        $ref: '../../components/response.yml#/responses/500'

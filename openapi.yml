@@ -75,3 +75,6 @@ paths:
 
   /api/product/delete-pbv:
     $ref: paths/product/delete-pbv.yml#/delete-pbv
+
+  /api/product/brands:
+    $ref: paths/product/brands.yml#/brands
