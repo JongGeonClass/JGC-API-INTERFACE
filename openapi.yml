@@ -63,3 +63,15 @@ paths:
   
   /api/product/categories:
     $ref: paths/product/categories.yml#/categories
+  
+  /api/product/add-pbv:
+    $ref: paths/product/add-pbv.yml#/add-pbv
+  
+  /api/product/pbv:
+    $ref: paths/product/pbv.yml#/pbv
+
+  /api/product/update-pbv:
+    $ref: paths/product/update-pbv.yml#/update-pbv
+
+  /api/product/delete-pbv:
+    $ref: paths/product/delete-pbv.yml#/delete-pbv

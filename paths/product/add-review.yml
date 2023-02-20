@@ -6,8 +6,6 @@ add-review:
       대댓글을 작성하려면, parent_review_id를 전달하면 됩니다.
     parameters:
     - $ref: '../../components/auth.yml#/token'
-    security:
-    - cookieAuth: []
     requestBody:
       content:
         application/json:

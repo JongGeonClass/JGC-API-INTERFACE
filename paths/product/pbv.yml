@@ -1,0 +1,28 @@
+pbv:
+  get:
+    summary: pbv 등록 확인 및 조회
+    description: >
+      등록된 pbv 옵션을 조회합니다.
+    parameters:
+    - $ref: '../../components/auth.yml#/token'
+    responses:
+      200:
+        description: OK
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                code:
+                  type: integer
+                  enum: [8000, 8001]
+                  description: >
+                    dictionary:
+                      * 8000 pbv가 등록되어 있습니다.
+                      * 8001 pbv가 등록되어 있지 않습니다.
+                data:
+                  $ref: '../../components/pbv.yml#/data'
+      401:
+        $ref: '../../components/response.yml#/responses/401'
+      500:
+        $ref: '../../components/response.yml#/responses/500'

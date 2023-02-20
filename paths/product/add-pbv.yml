@@ -1,0 +1,34 @@
+add-pbv:
+  post:
+    summary: 새로운 pbv 추가
+    description: >
+      유저가 고른 pbv를 추가합니다.
+    parameters:
+    - $ref: '../../components/auth.yml#/token'
+    requestBody:
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              data:
+                $ref: '../../components/pbv.yml#/data'
+    responses:
+      200:
+        description: OK
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                code:
+                  type: integer
+                  enum: [8000, 8001]
+                  description: >
+                    dictionary:
+                      * 8000 pbv 등록 성공
+                      * 8001 이미 pbv가 등록되어 있습니다.
+      401:
+        $ref: '../../components/response.yml#/responses/401'
+      500:
+        $ref: '../../components/response.yml#/responses/500'

@@ -1,0 +1,25 @@
+delete-pbv:
+  delete:
+    summary: 등록된 pbv 옵션 삭제
+    description: >
+      등록된 pbv 옵션을 삭제합니다.
+    parameters:
+    - $ref: '../../components/auth.yml#/token'
+    responses:
+      200:
+        description: OK
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                code:
+                  type: integer
+                  enum: [8000]
+                  description: >
+                    dictionary:
+                      * 8000 pbv 삭제 성공
+      401:
+        $ref: '../../components/response.yml#/responses/401'
+      500:
+        $ref: '../../components/response.yml#/responses/500'

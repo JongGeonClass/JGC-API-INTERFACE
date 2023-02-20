@@ -1,0 +1,5 @@
+data:
+  type: string
+  default: '{"pbv_key": "pbv_value"}'
+  description: pbv JSON 데이터 (with stringified)
+  required: true
